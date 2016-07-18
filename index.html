@@ -1,0 +1,36 @@
+<!DOCTYPE html>
+<html>
+<head>
+  <meta charset="utf-8">
+  <meta name="viewport" content="width=device-width">
+  <title>JS Bin</title>
+</head>
+<body>
+<p>Определение минимального и максимального значения:</p>
+<input id="name" type="text" placeholder="Введите числа через Space"/>
+<button id="btn">Вычислить</button>
+
+<script>
+var but = document.getElementById('btn');
+
+but.onclick = function(event) {
+	var input = document.getElementById('name');
+	var ourNumbers = input.value;
+	var arr = ourNumbers.split(' ');
+	var max = parseInt(arr[0]);
+	var min = parseInt(arr[0]);
+	for (var i=1; i<arr.length; i++) {
+		if (parseInt(arr[i])>max) {
+			max = parseInt(arr[i]);
+			}
+		if (parseInt(arr[i])<min) {
+			min = parseInt(arr[i]);
+			}
+	}
+	alert('Максимальное число: ' + max);
+	alert('Минимальное число: ' + min);
+};
+</script>
+
+</body>
+</html>
